@@ -1,8 +1,143 @@
+$white: #fff;
+$black: #000;
+$orange: #e47b25;
+$blue-dark: #08283F;
+$blue-light: #37C3DB;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 18px;
+  color: $black;
+}
+
 @font-face {
   font-family: 'orangejuice';
   src: url('../fonts/orange-juice.woff');
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'orangejuice';
+$tablet: 767px;
+
+// override parent styles by wrapping with container id
+#container {
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'orangejuice';
+    font-weight: 400;
+  }
+
+  h2 {
+    font-size: 3.5em;
+  }
+
+  h4 {
+    font-size: 1.8em;
+  }
+
+  hr {
+    margin: 2em 0;
+    border: none;
+    height: 1px;
+    background-color: $blue-light;
+  }
+
+  // header
+  nav {
+    font-size: .9rem;
+  }
+
+
+
+  // utilities
+  .u-center {
+    text-align: center;
+  }
+
+  .u-margin-bottom-zero {
+    margin-bottom: 0;
+  }
+
+  .u-margin-bottom-half {
+    margin-bottom: .5rem;
+  }
+
+  .u-margin-bottom-1rem {
+    margin-bottom: 1rem;
+  }
+
+  .u-margin-bottom-2rem {
+    margin-bottom: 2rem;
+  }
+
+  .u-bg-color {
+    padding: 2vh 2vw;
+
+    * {
+      color: $white;
+    }
+
+    &.u-bg-color--orange {
+      background-color: $orange;
+    }
+  }
+
+
+
+  // events page
+  .sas-presents-logo {
+    width: auto;
+    max-width: 100%;
+    max-height: 200px;
+  }
+
+  .o-grid-layout {
+    display: grid;
+
+    &.o-grid-layout--dandenong-tournament {
+
+      img {
+        margin: auto;
+      }
+
+      .dandenong-logo-graphic {
+        width: 200px;
+        height: 200px;
+      }
+
+      .dandenong-logo-text {
+        width: auto;
+        height: 200px;
+        margin-top: -50px;
+      }
+
+      @media (min-width: $tablet) {
+        grid-template-columns: .4fr .6fr;
+        justify-items: center;
+
+        img {
+          margin: 0;
+        }
+
+        .dandenong-logo-graphic {
+          justify-self: end;
+        }
+
+        .dandenong-logo-text {
+          margin-top: 0px;
+          justify-self: start;
+        }
+      }
+    }
+  }
+
+  .o-flex-layout {
+    display: flex;
+
+    &.o-flex-layout--space-evenly {
+      justify-content: space-evenly;
+    }
+  }
 }
+  

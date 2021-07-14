@@ -1,9 +1,100 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 18px;
+  color: #000;
+}
+
 @font-face {
   font-family: "orangejuice";
   src: url("../fonts/orange-juice.woff");
 }
-h1, h2, h3, h4, h5, h6 {
+#container h1, #container h2, #container h3, #container h4, #container h5, #container h6 {
   font-family: "orangejuice";
+  font-weight: 400;
+}
+#container h2 {
+  font-size: 3.5em;
+}
+#container h4 {
+  font-size: 1.8em;
+}
+#container hr {
+  margin: 2em 0;
+  border: none;
+  height: 1px;
+  background-color: #37C3DB;
+}
+#container nav {
+  font-size: 0.9rem;
+}
+#container .u-center {
+  text-align: center;
+}
+#container .u-margin-bottom-zero {
+  margin-bottom: 0;
+}
+#container .u-margin-bottom-half {
+  margin-bottom: 0.5rem;
+}
+#container .u-margin-bottom-1rem {
+  margin-bottom: 1rem;
+}
+#container .u-margin-bottom-2rem {
+  margin-bottom: 2rem;
+}
+#container .u-bg-color {
+  padding: 2vh 2vw;
+}
+#container .u-bg-color * {
+  color: #fff;
+}
+#container .u-bg-color.u-bg-color--orange {
+  background-color: #e47b25;
+}
+#container .sas-presents-logo {
+  width: auto;
+  max-width: 100%;
+  max-height: 200px;
+}
+#container .o-grid-layout {
+  display: grid;
+}
+#container .o-grid-layout.o-grid-layout--dandenong-tournament img {
+  margin: auto;
+}
+#container .o-grid-layout.o-grid-layout--dandenong-tournament .dandenong-logo-graphic {
+  width: 200px;
+  height: 200px;
+}
+#container .o-grid-layout.o-grid-layout--dandenong-tournament .dandenong-logo-text {
+  width: auto;
+  height: 200px;
+  margin-top: -50px;
+}
+@media (min-width: 767px) {
+  #container .o-grid-layout.o-grid-layout--dandenong-tournament {
+    grid-template-columns: 0.4fr 0.6fr;
+    justify-items: center;
+  }
+  #container .o-grid-layout.o-grid-layout--dandenong-tournament img {
+    margin: 0;
+  }
+  #container .o-grid-layout.o-grid-layout--dandenong-tournament .dandenong-logo-graphic {
+    justify-self: end;
+  }
+  #container .o-grid-layout.o-grid-layout--dandenong-tournament .dandenong-logo-text {
+    margin-top: 0px;
+    justify-self: start;
+  }
+}
+#container .o-flex-layout {
+  display: flex;
+}
+#container .o-flex-layout.o-flex-layout--space-evenly {
+  justify-content: space-evenly;
 }
 
 /*# sourceMappingURL=custom.css.map */
