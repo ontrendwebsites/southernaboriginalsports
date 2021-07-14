@@ -73,8 +73,15 @@ $tablet: 767px;
     nav {
       font-size: .9rem;
       display: none;
+    }
 
-      @media (min-width: $tablet) {
+    @media (min-width: $tablet) {
+
+      .hamburger {
+        display: none;
+      }
+
+      nav {
         display: inherit;
       }
     }
