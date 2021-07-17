@@ -1,22 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap");
+@font-face {
+  font-family: "orangejuice";
+  src: url("../fonts/orange-juice.woff");
+}
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-size: 18px;
-  color: #000;
+  color: #08283F;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
-@font-face {
-  font-family: "orangejuice";
-  src: url("../fonts/orange-juice.woff");
-}
 #container p {
   margin-top: 0;
 }
 #container h1, #container h2, #container h3, #container h4, #container h5, #container h6 {
   font-family: "orangejuice";
-  font-weight: 400;
+  font-weight: 700;
+}
+#container h1.alt-font, #container h2.alt-font, #container h3.alt-font, #container h4.alt-font, #container h5.alt-font, #container h6.alt-font {
+  font-family: "Source Sans Pro";
 }
 #container h2 {
   font-size: 3.5em;
@@ -28,7 +33,7 @@ body {
   margin: 2em 0;
   border: none;
   height: 1px;
-  background-color: #37C3DB;
+  background-color: #3b89a7;
 }
 #container .header {
   background-color: #f89827;
@@ -38,7 +43,20 @@ body {
 }
 #container .header .hamburger {
   position: absolute;
-  right: 10px;
+  right: 0px;
+  background-color: #fff;
+  border-radius: 0 0 0 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  opacity: 0.8;
+}
+#container .header .hamburger:hover {
+  opacity: 1;
+}
+#container .header .hamburger p {
+  margin: 0.3em 0 0 0;
+  line-height: 0;
 }
 #container .header .hamburger .hamburger-inner:before {
   background: #ffc72c;
@@ -67,12 +85,23 @@ body {
   line-height: 0;
 }
 #container .section-header-logo svg {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   margin: auto;
 }
-#container .section-header-logo p {
-  font-size: clamp(.9rem, 2.5vw, 1.5rem );
+#container .section-header-logo h4 {
+  font-size: clamp(.9rem, 4vw, 1.3rem );
+  line-height: 110%;
+  margin-bottom: 1em;
+}
+@media (min-width: 767px) {
+  #container .section-header-logo svg {
+    width: 200px;
+    height: 200px;
+  }
+  #container .section-header-logo h4 {
+    margin: auto auto 1rem 2rem;
+  }
 }
 #container .u-center {
   text-align: center;
@@ -106,32 +135,12 @@ body {
 #container .o-grid-layout {
   display: grid;
 }
-#container .o-grid-layout.o-grid-layout--dandenong-tournament img {
+#container .o-grid-layout * {
   margin: auto;
 }
-#container .o-grid-layout.o-grid-layout--dandenong-tournament .dandenong-logo-graphic {
-  width: 200px;
-  height: 200px;
-}
-#container .o-grid-layout.o-grid-layout--dandenong-tournament .dandenong-logo-text {
-  width: auto;
-  height: 200px;
-  margin-top: -50px;
-}
 @media (min-width: 767px) {
-  #container .o-grid-layout.o-grid-layout--dandenong-tournament {
-    grid-template-columns: 0.4fr 0.6fr;
-    justify-items: center;
-  }
-  #container .o-grid-layout.o-grid-layout--dandenong-tournament img {
-    margin: 0;
-  }
-  #container .o-grid-layout.o-grid-layout--dandenong-tournament .dandenong-logo-graphic {
-    justify-self: end;
-  }
-  #container .o-grid-layout.o-grid-layout--dandenong-tournament .dandenong-logo-text {
-    margin-top: 0px;
-    justify-self: start;
+  #container .o-grid-layout--auto-1 {
+    grid-template-columns: auto 1fr;
   }
 }
 #container .o-flex-layout {

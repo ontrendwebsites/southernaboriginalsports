@@ -42,27 +42,27 @@
 
   <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
-<!-- Pushy Menu -->
-<nav class="pushy pushy-right">
-    <div class="pushy-content">
-        <?php wp_nav_menu(array(
-                       'container' => false,                           // remove nav container
-                       'container_class' => 'menu cf',                 // class of container (should you choose to use it)
-                       'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
-                       'menu_class' => 'nav top-nav cf',               // adding custom nav class
-                       'theme_location' => 'main-nav',                 // where it's located in the theme
-                       'before' => '',                                 // before the menu
-                             'after' => '',                                  // after the menu
-                             'link_before' => '',                            // before each link
-                             'link_after' => '',                             // after each link
-                             'depth' => 0,                                   // limit the depth of the nav
-                       'fallback_cb' => ''                             // fallback function (if there is one)
-            )); ?>
-    </div>
-</nav>
+    <!-- Pushy Menu -->
+    <nav class="pushy pushy-right">
+      <div class="pushy-content">
+      <?php wp_nav_menu(array(
+       'container' => false,                           // remove nav container
+       'container_class' => 'menu cf',                 // class of container (should you choose to use it)
+       'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
+       'menu_class' => 'nav top-nav cf',               // adding custom nav class
+       'theme_location' => 'main-nav',                 // where it's located in the theme
+       'before' => '',                                 // before the menu
+             'after' => '',                                  // after the menu
+             'link_before' => '',                            // before each link
+             'link_after' => '',                             // after each link
+             'depth' => 0,                                   // limit the depth of the nav
+       'fallback_cb' => ''                             // fallback function (if there is one)
+      )); ?>
+      </div>
+    </nav>
 
-<!-- Site Overlay -->
-<div class="site-overlay"></div>
+    <!-- Site Overlay -->
+    <div class="site-overlay"></div>
 
     <div id="container" class="remodal-bg">
 
@@ -72,16 +72,20 @@
           <span class="hamburger-box">
             <span class="hamburger-inner"></span>
           </span>
+          <p><small>menu</small></p>
         </button>
 
         <div id="inner-header" class="wrap cf">
 
-          <section class="section-header-logo">
+          <section class="section-header-logo o-grid-layout o-grid-layout--auto-1">
             <?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
             <a href="<?php echo home_url(); ?>" rel="nofollow">
               <?php get_template_part('library/images/inline', 'sas-logo-main.svg'); ?>
             </a>
-            <p><?php bloginfo('description'); ?></p>
+            <h4 class="alt-font">
+              <?php //bloginfo('description'); ?>
+              <span>100%</span> Aboriginal owned and Community Grown
+            </h4>
           </section>
 
 
