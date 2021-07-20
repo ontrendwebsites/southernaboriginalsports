@@ -14,7 +14,8 @@ $blue-light: #3b89a7;
 }
 
 // device sizes
-$tablet: 767px;
+$tablet: 768px;
+$wide: 1030px;
 
 
 html {
@@ -110,6 +111,10 @@ body {
 
       nav {
         display: inherit;
+
+        ul.nav {
+          display: flex;
+        }
       }
     }
   }
@@ -137,14 +142,67 @@ body {
 
     @media (min-width: $tablet) {
 
+      text-align: left;
+
       svg {
         width: 200px;
         height: 200px;
         
       }
 
+      // header layout
+      .header-layout {
+        //outline: 3px solid blue;
+        height: 100%;
+        align-items: start;
+        justify-content: end;
+        margin: 0;
+
+        @media (min-width: $wide) {
+          padding-left: 2vw;
+        }
+      }
+
       h4 {
-        margin: auto auto 1rem 2rem;
+        margin: 3rem 0 1.05rem 0;
+      }
+
+      // nav styles
+      .nav {
+        padding-bottom: 1em;
+      }
+
+      .nav > li {
+        margin-right: 1px;
+
+        &:first-child a {
+            border-radius: 5px 0 0 5px;
+          }
+
+        &:last-child  a{
+          border-radius: 0 5px 5px 0;
+        }
+
+        a {
+          text-decoration: none;
+          background: $blue-dark;
+          padding: 1rem .8rem;
+          font-size: .9rem;
+
+          &:hover {
+            background: $blue-light;
+          }
+        }
+
+        .sub-menu {
+          //visibility: visible;
+          background: none;
+          border: none;
+
+          a {
+            min-width: 180px;
+          }
+        }
       }
     }
   }
@@ -183,19 +241,10 @@ body {
     }
   }
 
-
-
-  // events page
-  .sas-presents-logo {
-    width: auto;
-    max-width: 100%;
-    max-height: 200px;
-  }
-
-  .o-grid-layout {
+    .o-grid-layout {
     display: grid;
 
-    * {
+    > * {
       margin: auto;
     }
   }
@@ -210,9 +259,22 @@ body {
   .o-flex-layout {
     display: flex;
 
+    &.o-flex-layout--column {
+      flex-direction: column;
+    }
+
     &.o-flex-layout--space-evenly {
       justify-content: space-evenly;
     }
+  }
+
+
+
+  // events page
+  .sas-presents-logo {
+    width: auto;
+    max-width: 100%;
+    max-height: 200px;
   }
 }
   
