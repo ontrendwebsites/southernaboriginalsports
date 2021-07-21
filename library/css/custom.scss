@@ -17,6 +17,16 @@ $blue-light: #3b89a7;
 $tablet: 768px;
 $wide: 1030px;
 
+// animations
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 
 html {
   scroll-behavior: smooth;
@@ -155,7 +165,7 @@ body {
         //outline: 3px solid blue;
         height: 100%;
         align-items: start;
-        justify-content: end;
+        justify-content: flex-end;
         margin: 0;
 
         @media (min-width: $wide) {
@@ -204,6 +214,38 @@ body {
           }
         }
       }
+    }
+  }
+
+  // header sticky on scroll
+  .header.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    animation: fade-in .2s 1;
+    z-index: 10;
+    box-shadow: 0px 5px 10px 5px rgba(0,0,0,0.2);
+
+    svg {
+      width: 100px;
+      height: 100px;
+    }
+
+    .section-header-logo .header-layout {
+      justify-content: center;
+    }
+
+    nav {
+      margin: 0 auto 0 0;
+
+      ul {
+        padding: 0;
+      }
+    }
+
+    .alt-font {
+      display: none;
     }
   }
 

@@ -79,7 +79,7 @@
 
           <section class="section-header-logo o-grid-layout o-grid-layout--auto-1">
             <?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-            <a href="<?php echo home_url(); ?>" rel="nofollow">
+            <a class="header-logo" href="<?php echo home_url(); ?>" rel="nofollow">
               <?php get_template_part('library/images/inline', 'sas-logo-main.svg'); ?>
             </a>
             <div class="o-flex-layout o-flex-layout--column header-layout">
