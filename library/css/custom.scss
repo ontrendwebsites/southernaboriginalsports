@@ -1,8 +1,32 @@
+// colours
 $white: #fff;
 $black: #000;
 $orange: #e47b25;
+$yellow: #fbb040;
 $blue-dark: #08283F;
-$blue-light: #37C3DB;
+$blue-light: #3b89a7;
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
+@font-face {
+  font-family: 'orangejuice';
+  src: url('../fonts/orange-juice.woff');
+}
+
+// device sizes
+$tablet: 768px;
+$wide: 1030px;
+
+// animations
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 
 html {
   scroll-behavior: smooth;
@@ -10,22 +34,24 @@ html {
 
 body {
   font-size: 18px;
-  color: $black;
+  color: $blue-dark;
+  font-family: 'Source Sans Pro', sans-serif;
 }
-
-@font-face {
-  font-family: 'orangejuice';
-  src: url('../fonts/orange-juice.woff');
-}
-
-$tablet: 767px;
 
 // override parent styles by wrapping with container id
 #container {
 
+  p {
+    margin-top: 0;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'orangejuice';
-    font-weight: 400;
+    font-weight: 700;
+
+    &.alt-font {
+      font-family: 'Source Sans Pro';
+    }
   }
 
   h2 {
@@ -44,10 +70,184 @@ $tablet: 767px;
   }
 
   // header
-  nav {
-    font-size: .9rem;
+  .header {
+    background-color: #f89827;
+    background-image: url(https://southernaboriginalsports.com.au/wp-content/uploads/2021/05/Website-Background-1.jpg);
+    background-size: cover;
+    background-position: top center;
+
+    .hamburger {
+      position: absolute;
+      right: 0px;
+      background-color: $white;
+      border-radius: 0 0 0 8px;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      opacity: .8;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      p {
+        margin: .3em 0 0 0;
+        line-height: 0;
+      }
+
+      .hamburger-inner {
+
+        &:before {
+          background: #ffc72c;
+        }
+
+        &:after {
+          background: #d22631;
+        }
+      }
+    }
+
+    nav {
+      font-size: .9rem;
+      display: none;
+    }
+
+    // header responsive for wider devices
+    @media (min-width: $tablet) {
+
+      .hamburger {
+        display: none;
+      }
+
+      nav {
+        display: inherit;
+
+        ul.nav {
+          display: flex;
+        }
+      }
+    }
   }
 
+  .section-header-logo {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    a {
+      line-height: 0;
+    }
+    
+    svg {
+      width: 150px;
+      height: 150px;
+      margin: auto;
+    }
+
+    h4 {
+      font-size: clamp(.9rem, 4vw, 1.3rem );
+      line-height: 110%;
+      margin-bottom: 1em;
+    }
+
+    @media (min-width: $tablet) {
+
+      text-align: left;
+
+      svg {
+        width: 200px;
+        height: 200px;
+        
+      }
+
+      // header layout
+      .header-layout {
+        //outline: 3px solid blue;
+        height: 100%;
+        align-items: start;
+        justify-content: flex-end;
+        margin: 0;
+
+        @media (min-width: $wide) {
+          padding-left: 2vw;
+        }
+      }
+
+      h4 {
+        margin: 3rem 0 1.05rem 0;
+      }
+
+      // nav styles
+      .nav {
+        padding-bottom: 1em;
+      }
+
+      .nav > li {
+        margin-right: 1px;
+
+        &:first-child a {
+            border-radius: 5px 0 0 5px;
+          }
+
+        &:last-child  a{
+          border-radius: 0 5px 5px 0;
+        }
+
+        a {
+          text-decoration: none;
+          background: $blue-dark;
+          padding: 1rem .8rem;
+          font-size: .9rem;
+
+          &:hover {
+            background: $blue-light;
+          }
+        }
+
+        .sub-menu {
+          //visibility: visible;
+          background: none;
+          border: none;
+
+          a {
+            min-width: 180px;
+          }
+        }
+      }
+    }
+  }
+
+  // header sticky on scroll
+  .header.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    animation: fade-in .2s 1;
+    z-index: 10;
+    box-shadow: 0px 5px 10px 5px rgba(0,0,0,0.2);
+
+    svg {
+      width: 100px;
+      height: 100px;
+    }
+
+    .section-header-logo .header-layout {
+      justify-content: center;
+    }
+
+    nav {
+      margin: 0 auto 0 0;
+
+      ul {
+        padding: 0;
+      }
+    }
+
+    .alt-font {
+      display: none;
+    }
+  }
 
 
   // utilities
@@ -83,6 +283,33 @@ $tablet: 767px;
     }
   }
 
+    .o-grid-layout {
+    display: grid;
+
+    > * {
+      margin: auto;
+    }
+  }
+
+  @media (min-width: $tablet) {
+    
+    .o-grid-layout--auto-1 {
+      grid-template-columns: auto 1fr;
+    }
+  }
+
+  .o-flex-layout {
+    display: flex;
+
+    &.o-flex-layout--column {
+      flex-direction: column;
+    }
+
+    &.o-flex-layout--space-evenly {
+      justify-content: space-evenly;
+    }
+  }
+
 
 
   // events page
@@ -90,54 +317,6 @@ $tablet: 767px;
     width: auto;
     max-width: 100%;
     max-height: 200px;
-  }
-
-  .o-grid-layout {
-    display: grid;
-
-    &.o-grid-layout--dandenong-tournament {
-
-      img {
-        margin: auto;
-      }
-
-      .dandenong-logo-graphic {
-        width: 200px;
-        height: 200px;
-      }
-
-      .dandenong-logo-text {
-        width: auto;
-        height: 200px;
-        margin-top: -50px;
-      }
-
-      @media (min-width: $tablet) {
-        grid-template-columns: .4fr .6fr;
-        justify-items: center;
-
-        img {
-          margin: 0;
-        }
-
-        .dandenong-logo-graphic {
-          justify-self: end;
-        }
-
-        .dandenong-logo-text {
-          margin-top: 0px;
-          justify-self: start;
-        }
-      }
-    }
-  }
-
-  .o-flex-layout {
-    display: flex;
-
-    &.o-flex-layout--space-evenly {
-      justify-content: space-evenly;
-    }
   }
 }
   

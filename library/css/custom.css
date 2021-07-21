@@ -1,19 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap");
+@font-face {
+  font-family: "orangejuice";
+  src: url("../fonts/orange-juice.woff");
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-size: 18px;
-  color: #000;
+  color: #08283F;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
-@font-face {
-  font-family: "orangejuice";
-  src: url("../fonts/orange-juice.woff");
+#container p {
+  margin-top: 0;
 }
 #container h1, #container h2, #container h3, #container h4, #container h5, #container h6 {
   font-family: "orangejuice";
-  font-weight: 400;
+  font-weight: 700;
+}
+#container h1.alt-font, #container h2.alt-font, #container h3.alt-font, #container h4.alt-font, #container h5.alt-font, #container h6.alt-font {
+  font-family: "Source Sans Pro";
 }
 #container h2 {
   font-size: 3.5em;
@@ -25,10 +41,151 @@ body {
   margin: 2em 0;
   border: none;
   height: 1px;
-  background-color: #37C3DB;
+  background-color: #3b89a7;
 }
-#container nav {
+#container .header {
+  background-color: #f89827;
+  background-image: url(https://southernaboriginalsports.com.au/wp-content/uploads/2021/05/Website-Background-1.jpg);
+  background-size: cover;
+  background-position: top center;
+}
+#container .header .hamburger {
+  position: absolute;
+  right: 0px;
+  background-color: #fff;
+  border-radius: 0 0 0 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  opacity: 0.8;
+}
+#container .header .hamburger:hover {
+  opacity: 1;
+}
+#container .header .hamburger p {
+  margin: 0.3em 0 0 0;
+  line-height: 0;
+}
+#container .header .hamburger .hamburger-inner:before {
+  background: #ffc72c;
+}
+#container .header .hamburger .hamburger-inner:after {
+  background: #d22631;
+}
+#container .header nav {
   font-size: 0.9rem;
+  display: none;
+}
+@media (min-width: 768px) {
+  #container .header .hamburger {
+    display: none;
+  }
+  #container .header nav {
+    display: inherit;
+  }
+  #container .header nav ul.nav {
+    display: flex;
+  }
+}
+#container .section-header-logo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+#container .section-header-logo a {
+  line-height: 0;
+}
+#container .section-header-logo svg {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+}
+#container .section-header-logo h4 {
+  font-size: clamp(.9rem, 4vw, 1.3rem );
+  line-height: 110%;
+  margin-bottom: 1em;
+}
+@media (min-width: 768px) {
+  #container .section-header-logo {
+    text-align: left;
+  }
+  #container .section-header-logo svg {
+    width: 200px;
+    height: 200px;
+  }
+  #container .section-header-logo .header-layout {
+    height: 100%;
+    align-items: start;
+    justify-content: flex-end;
+    margin: 0;
+  }
+}
+@media (min-width: 768px) and (min-width: 1030px) {
+  #container .section-header-logo .header-layout {
+    padding-left: 2vw;
+  }
+}
+@media (min-width: 768px) {
+  #container .section-header-logo h4 {
+    margin: 3rem 0 1.05rem 0;
+  }
+}
+@media (min-width: 768px) {
+  #container .section-header-logo .nav {
+    padding-bottom: 1em;
+  }
+}
+@media (min-width: 768px) {
+  #container .section-header-logo .nav > li {
+    margin-right: 1px;
+  }
+  #container .section-header-logo .nav > li:first-child a {
+    border-radius: 5px 0 0 5px;
+  }
+  #container .section-header-logo .nav > li:last-child a {
+    border-radius: 0 5px 5px 0;
+  }
+  #container .section-header-logo .nav > li a {
+    text-decoration: none;
+    background: #08283F;
+    padding: 1rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  #container .section-header-logo .nav > li a:hover {
+    background: #3b89a7;
+  }
+  #container .section-header-logo .nav > li .sub-menu {
+    background: none;
+    border: none;
+  }
+  #container .section-header-logo .nav > li .sub-menu a {
+    min-width: 180px;
+  }
+}
+#container .header.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  animation: fade-in 0.2s 1;
+  z-index: 10;
+  box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.2);
+}
+#container .header.active svg {
+  width: 100px;
+  height: 100px;
+}
+#container .header.active .section-header-logo .header-layout {
+  justify-content: center;
+}
+#container .header.active nav {
+  margin: 0 auto 0 0;
+}
+#container .header.active nav ul {
+  padding: 0;
+}
+#container .header.active .alt-font {
+  display: none;
 }
 #container .u-center {
   text-align: center;
@@ -54,47 +211,30 @@ body {
 #container .u-bg-color.u-bg-color--orange {
   background-color: #e47b25;
 }
-#container .sas-presents-logo {
-  width: auto;
-  max-width: 100%;
-  max-height: 200px;
-}
 #container .o-grid-layout {
   display: grid;
 }
-#container .o-grid-layout.o-grid-layout--dandenong-tournament img {
+#container .o-grid-layout > * {
   margin: auto;
 }
-#container .o-grid-layout.o-grid-layout--dandenong-tournament .dandenong-logo-graphic {
-  width: 200px;
-  height: 200px;
-}
-#container .o-grid-layout.o-grid-layout--dandenong-tournament .dandenong-logo-text {
-  width: auto;
-  height: 200px;
-  margin-top: -50px;
-}
-@media (min-width: 767px) {
-  #container .o-grid-layout.o-grid-layout--dandenong-tournament {
-    grid-template-columns: 0.4fr 0.6fr;
-    justify-items: center;
-  }
-  #container .o-grid-layout.o-grid-layout--dandenong-tournament img {
-    margin: 0;
-  }
-  #container .o-grid-layout.o-grid-layout--dandenong-tournament .dandenong-logo-graphic {
-    justify-self: end;
-  }
-  #container .o-grid-layout.o-grid-layout--dandenong-tournament .dandenong-logo-text {
-    margin-top: 0px;
-    justify-self: start;
+@media (min-width: 768px) {
+  #container .o-grid-layout--auto-1 {
+    grid-template-columns: auto 1fr;
   }
 }
 #container .o-flex-layout {
   display: flex;
 }
+#container .o-flex-layout.o-flex-layout--column {
+  flex-direction: column;
+}
 #container .o-flex-layout.o-flex-layout--space-evenly {
   justify-content: space-evenly;
+}
+#container .sas-presents-logo {
+  width: auto;
+  max-width: 100%;
+  max-height: 200px;
 }
 
 /*# sourceMappingURL=custom.css.map */
