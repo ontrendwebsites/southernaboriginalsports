@@ -26,6 +26,16 @@ body {
   color: #08283F;
   font-family: "Source Sans Pro", sans-serif;
 }
+body a {
+  color: #08283F;
+  transition: all 0.07s ease-in;
+}
+body a:visited {
+  color: #08283F;
+}
+body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
+  color: #3b89a7;
+}
 
 #container p {
   margin-top: 0;
@@ -55,6 +65,26 @@ body {
   background-size: cover;
   background-position: top center;
 }
+#container .header .social-icons {
+  font-size: 1.5rem;
+  grid-gap: 0.5rem;
+  position: absolute;
+  top: 3rem;
+  right: 0.15rem;
+  margin: 0;
+  display: block;
+}
+#container .header .social-icons li {
+  margin: 0.25rem 0;
+}
+@media (min-width: 768px) {
+  #container .header .social-icons {
+    right: 0.5rem;
+    left: auto;
+    display: flex;
+    top: 1rem;
+  }
+}
 #container .header .hamburger {
   transform: scale(0.75);
   transform-origin: top right;
@@ -66,6 +96,7 @@ body {
   flex-direction: column;
   padding: 10px;
   opacity: 0.8;
+  z-index: 10;
 }
 #container .header .hamburger:hover {
   opacity: 1;
@@ -93,6 +124,9 @@ body {
   }
   #container .header nav ul.nav {
     display: flex;
+  }
+  #container .header nav ul.nav a:hover, #container .header nav ul.nav a:focus, #container .header nav ul.nav a:visited, #container .header nav ul.nav a:visited:hover, #container .header nav ul.nav a:visited:focus {
+    color: #fff;
   }
 }
 #container .section-header-logo {
@@ -238,6 +272,12 @@ body {
 }
 #container .o-flex-layout.o-flex-layout--space-evenly {
   justify-content: space-evenly;
+}
+#container .position-absolute {
+  position: absolute;
+}
+#container .position-relative {
+  position: relative;
 }
 #container .sas-presents-logo {
   width: auto;

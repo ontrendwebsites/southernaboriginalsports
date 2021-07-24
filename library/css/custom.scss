@@ -44,6 +44,19 @@ body {
   line-height: 140%;
   color: $blue-dark;
   font-family: 'Source Sans Pro', sans-serif;
+
+  a {
+    color: $blue-dark;
+    transition: all .07s ease-in;
+
+    &:visited {
+      color: $blue-dark;  
+    }
+
+    &:hover, &:visited:hover, &:focus, &:visited:focus {
+      color: $blue-light;
+    }
+  }
 }
 
 // override parent styles by wrapping with container id
@@ -84,6 +97,29 @@ body {
     background-size: cover;
     background-position: top center;
 
+    // social icons
+    .social-icons {
+      font-size: 1.5rem;
+      grid-gap: .5rem;
+      position: absolute;
+      top: 3rem;
+      right: 0.15rem;
+      margin: 0;
+      display: block;
+
+      li {
+        margin: .25rem 0;
+      }
+
+      @media (min-width:$tablet) {
+        right: .5rem;
+        left: auto;
+        display: flex;
+        top: 1rem;
+      }
+    }
+
+
     .hamburger {
       transform: scale(.75);
       transform-origin: top right;
@@ -95,6 +131,7 @@ body {
       flex-direction: column;
       padding: 10px;
       opacity: .8;
+      z-index: 10;
 
       &:hover {
         opacity: 1;
@@ -134,6 +171,13 @@ body {
 
         ul.nav {
           display: flex;
+
+          a {
+
+            &:hover, &:focus, &:visited, &:visited:hover, &:visited:focus {
+              color: $white;
+            }
+          }
         }
       }
     }
@@ -293,7 +337,7 @@ body {
     }
   }
 
-    .o-grid-layout {
+  .o-grid-layout {
     display: grid;
 
     > * {
@@ -319,6 +363,9 @@ body {
       justify-content: space-evenly;
     }
   }
+
+  .position-absolute { position: absolute;}
+  .position-relative { position: relative;}
 
 
 
