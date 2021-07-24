@@ -13,6 +13,8 @@ $blue-light: #3b89a7;
   src: url('../fonts/orange-juice.woff');
 }
 
+$font-main: 'Source Sans Pro', sans-serif;
+
 // device sizes
 $tablet: 768px;
 $wide: 1030px;
@@ -30,12 +32,31 @@ $wide: 1030px;
 
 html {
   scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {
   font-size: 18px;
+  line-height: 140%;
   color: $blue-dark;
   font-family: 'Source Sans Pro', sans-serif;
+
+  a {
+    color: $blue-dark;
+    transition: all .07s ease-in;
+
+    &:visited {
+      color: $blue-dark;  
+    }
+
+    &:hover, &:visited:hover, &:focus, &:visited:focus {
+      color: $blue-light;
+    }
+  }
 }
 
 // override parent styles by wrapping with container id
@@ -46,20 +67,45 @@ body {
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'orangejuice';
     font-weight: 700;
+    line-height: 110%;
+    margin-top: 0;
 
     &.alt-font {
       font-family: 'Source Sans Pro';
     }
   }
 
+  h1 {
+    font-size: 2.5em;
+
+    @media (min-width:$tablet) {
+      font-size: 4.5em;
+    }
+  }
+
   h2 {
-    font-size: 3.5em;
+    font-size: 2em;
+
+    @media (min-width:$tablet) {
+      font-size: 3.5em;
+    }
+  }
+
+  h3 {
+    font-size: 1.8em;
+
+    @media (min-width:$tablet) {
+      font-size: 2.5em;
+    }
   }
 
   h4 {
-    font-size: 1.8em;
+    font-size: 1.5em;
+
+    @media (min-width:$tablet) {
+      font-size: 1.8em;
+    }
   }
 
   hr {
@@ -76,7 +122,32 @@ body {
     background-size: cover;
     background-position: top center;
 
+    // social icons
+    .social-icons {
+      font-size: 1.5rem;
+      grid-gap: .5rem;
+      position: absolute;
+      top: 3rem;
+      right: 0.15rem;
+      margin: 0;
+      display: block;
+
+      li {
+        margin: .25rem 0;
+      }
+
+      @media (min-width:$tablet) {
+        right: .5rem;
+        left: auto;
+        display: flex;
+        top: 1rem;
+      }
+    }
+
+
     .hamburger {
+      transform: scale(.75);
+      transform-origin: top right;
       position: absolute;
       right: 0px;
       background-color: $white;
@@ -85,6 +156,7 @@ body {
       flex-direction: column;
       padding: 10px;
       opacity: .8;
+      z-index: 10;
 
       &:hover {
         opacity: 1;
@@ -124,6 +196,13 @@ body {
 
         ul.nav {
           display: flex;
+
+          a {
+
+            &:hover, &:focus, &:visited, &:visited:hover, &:visited:focus {
+              color: $white;
+            }
+          }
         }
       }
     }
@@ -227,6 +306,13 @@ body {
     z-index: 10;
     box-shadow: 0px 5px 10px 5px rgba(0,0,0,0.2);
 
+    .social-icons {
+      display: flex;
+      font-size: 1rem;
+      top: auto;
+      bottom: 0.2rem;
+    }
+
     svg {
       width: 100px;
       height: 100px;
@@ -283,7 +369,7 @@ body {
     }
   }
 
-    .o-grid-layout {
+  .o-grid-layout {
     display: grid;
 
     > * {
@@ -310,6 +396,9 @@ body {
     }
   }
 
+  .position-absolute { position: absolute;}
+  .position-relative { position: relative;}
+
 
 
   // events page
@@ -319,4 +408,69 @@ body {
     max-height: 200px;
   }
 }
+
+// sidebar
+.widget {
+  padding: 0 10px;
+  margin: 2.2em 0;
+}
+
+.sidebar {
+  background-color: rgba($yellow, 1);
+  background-image: url(https://southernaboriginalsports.com.au/wp-content/uploads/2021/05/Website-Background-1.jpg);
+  background-size: cover;
+  background-position: top center;
+  border-radius: 8px;
+}
+
+
+// search
+.searchform {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+
+  input[type='search'] {
+    border: 2px solid $blue-light;
+    background: $white;
+    min-width: 100%;
+    box-sizing: inherit;
+    padding: 12px;
+    font-family: $font-main;
+    margin-bottom: .5rem;
+    color: $blue-dark;
+  }
+
+  button {
+    align-self: flex-start;
+    border: none;
+    background-color: rgba($blue-light, .8);
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-weight: 700;
+    transition: all .2s ease-out;
+
+    &:hover {
+      background-color: $blue-dark;
+      color: $yellow;
+      transform: scale(1.05);
+      transform-origin: top left;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   

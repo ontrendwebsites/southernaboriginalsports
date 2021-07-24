@@ -13,29 +13,72 @@
 }
 html {
   scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {
   font-size: 18px;
+  line-height: 140%;
   color: #08283F;
   font-family: "Source Sans Pro", sans-serif;
+}
+body a {
+  color: #08283F;
+  transition: all 0.07s ease-in;
+}
+body a:visited {
+  color: #08283F;
+}
+body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
+  color: #3b89a7;
 }
 
 #container p {
   margin-top: 0;
 }
 #container h1, #container h2, #container h3, #container h4, #container h5, #container h6 {
-  font-family: "orangejuice";
   font-weight: 700;
+  line-height: 110%;
+  margin-top: 0;
 }
 #container h1.alt-font, #container h2.alt-font, #container h3.alt-font, #container h4.alt-font, #container h5.alt-font, #container h6.alt-font {
   font-family: "Source Sans Pro";
 }
+#container h1 {
+  font-size: 2.5em;
+}
+@media (min-width: 768px) {
+  #container h1 {
+    font-size: 4.5em;
+  }
+}
 #container h2 {
-  font-size: 3.5em;
+  font-size: 2em;
+}
+@media (min-width: 768px) {
+  #container h2 {
+    font-size: 3.5em;
+  }
+}
+#container h3 {
+  font-size: 1.8em;
+}
+@media (min-width: 768px) {
+  #container h3 {
+    font-size: 2.5em;
+  }
 }
 #container h4 {
-  font-size: 1.8em;
+  font-size: 1.5em;
+}
+@media (min-width: 768px) {
+  #container h4 {
+    font-size: 1.8em;
+  }
 }
 #container hr {
   margin: 2em 0;
@@ -49,7 +92,29 @@ body {
   background-size: cover;
   background-position: top center;
 }
+#container .header .social-icons {
+  font-size: 1.5rem;
+  grid-gap: 0.5rem;
+  position: absolute;
+  top: 3rem;
+  right: 0.15rem;
+  margin: 0;
+  display: block;
+}
+#container .header .social-icons li {
+  margin: 0.25rem 0;
+}
+@media (min-width: 768px) {
+  #container .header .social-icons {
+    right: 0.5rem;
+    left: auto;
+    display: flex;
+    top: 1rem;
+  }
+}
 #container .header .hamburger {
+  transform: scale(0.75);
+  transform-origin: top right;
   position: absolute;
   right: 0px;
   background-color: #fff;
@@ -58,6 +123,7 @@ body {
   flex-direction: column;
   padding: 10px;
   opacity: 0.8;
+  z-index: 10;
 }
 #container .header .hamburger:hover {
   opacity: 1;
@@ -85,6 +151,9 @@ body {
   }
   #container .header nav ul.nav {
     display: flex;
+  }
+  #container .header nav ul.nav a:hover, #container .header nav ul.nav a:focus, #container .header nav ul.nav a:visited, #container .header nav ul.nav a:visited:hover, #container .header nav ul.nav a:visited:focus {
+    color: #fff;
   }
 }
 #container .section-header-logo {
@@ -171,6 +240,12 @@ body {
   z-index: 10;
   box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.2);
 }
+#container .header.active .social-icons {
+  display: flex;
+  font-size: 1rem;
+  top: auto;
+  bottom: 0.2rem;
+}
 #container .header.active svg {
   width: 100px;
   height: 100px;
@@ -231,10 +306,60 @@ body {
 #container .o-flex-layout.o-flex-layout--space-evenly {
   justify-content: space-evenly;
 }
+#container .position-absolute {
+  position: absolute;
+}
+#container .position-relative {
+  position: relative;
+}
 #container .sas-presents-logo {
   width: auto;
   max-width: 100%;
   max-height: 200px;
+}
+
+.widget {
+  padding: 0 10px;
+  margin: 2.2em 0;
+}
+
+.sidebar {
+  background-color: #fbb040;
+  background-image: url(https://southernaboriginalsports.com.au/wp-content/uploads/2021/05/Website-Background-1.jpg);
+  background-size: cover;
+  background-position: top center;
+  border-radius: 8px;
+}
+
+.searchform {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+}
+.searchform input[type=search] {
+  border: 2px solid #3b89a7;
+  background: #fff;
+  min-width: 100%;
+  box-sizing: inherit;
+  padding: 12px;
+  font-family: "Source Sans Pro", sans-serif;
+  margin-bottom: 0.5rem;
+  color: #08283F;
+}
+.searchform button {
+  align-self: flex-start;
+  border: none;
+  background-color: rgba(59, 137, 167, 0.8);
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-weight: 700;
+  transition: all 0.2s ease-out;
+}
+.searchform button:hover {
+  background-color: #08283F;
+  color: #fbb040;
+  transform: scale(1.05);
+  transform-origin: top left;
 }
 
 /*# sourceMappingURL=custom.css.map */
