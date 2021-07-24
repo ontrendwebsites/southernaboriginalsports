@@ -43,15 +43,42 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
 #container h1, #container h2, #container h3, #container h4, #container h5, #container h6 {
   font-weight: 700;
   line-height: 110%;
+  margin-top: 0;
 }
 #container h1.alt-font, #container h2.alt-font, #container h3.alt-font, #container h4.alt-font, #container h5.alt-font, #container h6.alt-font {
   font-family: "Source Sans Pro";
 }
+#container h1 {
+  font-size: 2.5em;
+}
+@media (min-width: 768px) {
+  #container h1 {
+    font-size: 4.5em;
+  }
+}
 #container h2 {
-  font-size: 3.5em;
+  font-size: 2em;
+}
+@media (min-width: 768px) {
+  #container h2 {
+    font-size: 3.5em;
+  }
+}
+#container h3 {
+  font-size: 1.8em;
+}
+@media (min-width: 768px) {
+  #container h3 {
+    font-size: 2.5em;
+  }
 }
 #container h4 {
-  font-size: 1.8em;
+  font-size: 1.5em;
+}
+@media (min-width: 768px) {
+  #container h4 {
+    font-size: 1.8em;
+  }
 }
 #container hr {
   margin: 2em 0;
@@ -212,6 +239,12 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
   animation: fade-in 0.2s 1;
   z-index: 10;
   box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.2);
+}
+#container .header.active .social-icons {
+  display: flex;
+  font-size: 1rem;
+  top: auto;
+  bottom: 0.2rem;
 }
 #container .header.active svg {
   width: 100px;
