@@ -75,7 +75,13 @@
           <p><small>menu</small></p>
         </button>
 
-        <div id="inner-header" class="wrap cf">
+        <div id="inner-header" class="wrap cf position-relative">
+          
+          <ul class="social-icons o-flex-layout position-absolute">
+            <li><a href="https://www.facebook.com/Southern-Aboriginal-Sports-104624365043189" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href=""><i class="fab fa-instagram"></i></a></li>
+            <li><a href=""><i class="fas fa-paper-plane"></i></a></li>
+          </ul>
 
           <section class="section-header-logo o-grid-layout o-grid-layout--auto-1">
             <?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
