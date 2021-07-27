@@ -12,23 +12,30 @@ window.addEventListener('DOMContentLoaded', (event) => {
     } 
   });
 
-  // Sticky header on scroll
-  gsap.to('.header', {
-    scrollTrigger: {
-      trigger: '#content',
-      start: 'top top+=00',
-      endTrigger: '.footer',
-      end: 'bottom',
-      scrub: true,
-      // markers: true
-      //markers: {startColor: "green", endColor: "red", fontSize: "12px"},
-      onToggle: ({isActive}) => console.log('cunce!'),
 
-      toggleClass: {targets: ".header", className: "active"}
-    } 
+  // Sticky header on scroll
+  ScrollTrigger.create({
+
+    onEnter: () => {
+      console.log('this');
+      const mobileHeader = document.querySelector('header.active');
+      let mobileHeaderHeight = mobileHeader.offsetHeight;
+
+      var newTl = gsap.timeline({
+        delay: .3,
+      });
+      newTl.fromTo(mobileHeader, {y: -mobileHeaderHeight}, {y: 0, duration: .3});
+    },
+
+    trigger: "#content",
+    start: "top top+=100",
+    endTrigger: ".footer",
+    end: "bottom",
+    //markers: {startColor: "green", endColor: "red", fontSize: "12px"},
+    //onToggle: self => console.log("toggled, isActive:", self.isActive),
+    toggleClass: {targets: ".header", className: "active"}
   });
 
 });
-
 
 
