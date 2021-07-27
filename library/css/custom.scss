@@ -124,7 +124,7 @@ body {
 
     // social icons
     .social-icons {
-      font-size: 1.5rem;
+      font-size: 1rem;
       grid-gap: .5rem;
       position: absolute;
       top: 3rem;
@@ -141,6 +141,7 @@ body {
         left: auto;
         display: flex;
         top: 1rem;
+        font-size: 1.5rem;
       }
     }
 
@@ -302,13 +303,11 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    animation: fade-in .2s 1;
     z-index: 10;
     box-shadow: 0px 5px 10px 5px rgba(0,0,0,0.2);
 
     .social-icons {
       display: flex;
-      font-size: 1rem;
       top: auto;
       bottom: 0.2rem;
     }

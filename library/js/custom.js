@@ -14,33 +14,26 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
   // Sticky header on scroll
-  const mobileHeader = document.querySelector('header.active');
-  var tl = gsap.timeline();
-  tl.to(".header", {x: 100, duration: 1});
-  tl.pause();
-  
-  
-  gsap.to('.header', {
-    scrollTrigger: {
-      trigger: '#content',
-      start: 'top top+=0',
-      endTrigger: '.footer',
-      end: 'bottom',
-      scrub: true,
-      // markers: true
-      markers: {startColor: "green", endColor: "red", fontSize: "12px"},
-      onEnter: () => tl.play(),
-      onLeaveBack: () => tl.reverse(),
-      //onToggle: self => console.log("toggled. active?", self.isActive),
+  ScrollTrigger.create({
 
-      //onEnter: () => console.log('onEnter'),
-      onLeave: () => console.log('onLeave'),
-      onEnterBack: () => console.log('onEnterBack'),
-      //onLeaveBack: () => console.log('onLeaveBack'),
+    onEnter: () => {
+      console.log('this');
+      const mobileHeader = document.querySelector('header.active');
+      let mobileHeaderHeight = mobileHeader.offsetHeight;
 
+      var newTl = gsap.timeline({
+        delay: .3,
+      });
+      newTl.fromTo(mobileHeader, {y: -mobileHeaderHeight}, {y: 0, duration: .3});
+    },
 
-      toggleClass: {targets: ".header", className: "active"}
-    } 
+    trigger: "#content",
+    start: "top top+=100",
+    endTrigger: ".footer",
+    end: "bottom",
+    //markers: {startColor: "green", endColor: "red", fontSize: "12px"},
+    //onToggle: self => console.log("toggled, isActive:", self.isActive),
+    toggleClass: {targets: ".header", className: "active"}
   });
 
 });
