@@ -14,27 +14,22 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 
   // Sticky header on scroll
-  ScrollTrigger.create({
 
-    onEnter: () => {
-      console.log('this');
-      const mobileHeader = document.querySelector('header.active');
-      let mobileHeaderHeight = mobileHeader.offsetHeight;
+  const mobileHeader = document.querySelector('header.active');
+  let mobileHeaderHeight = mobileHeader.offsetHeight;
+  mobileHeader.style.zIndex = '20';
+  mobileHeader.style.top = -mobileHeaderHeight + 'px';
 
-      var newTl = gsap.timeline({
-        delay: .3,
-      });
-      newTl.fromTo(mobileHeader, {y: -mobileHeaderHeight}, {y: 0, duration: .3});
+  gsap.to(mobileHeader, {
+    scrollTrigger: {
+      trigger: "#content",
+      scrub: true,
+        start: "100",
+        end: "180",
+        //markers: {startColor: "green", endColor: "red", fontSize: "12px"},
     },
-
-    trigger: "#content",
-    start: "top top+=100",
-    endTrigger: ".footer",
-    end: "bottom",
-    //markers: {startColor: "green", endColor: "red", fontSize: "12px"},
-    //onToggle: self => console.log("toggled, isActive:", self.isActive),
-    toggleClass: {targets: ".header", className: "active"}
-  });
+    y: mobileHeaderHeight, display:'block',
+  })
 
 
   // parallax

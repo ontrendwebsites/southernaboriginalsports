@@ -91,6 +91,8 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
   background-image: url(https://southernaboriginalsports.com.au/wp-content/uploads/2021/08/Website-Background-blue.jpg);
   background-size: cover;
   background-position: top center;
+  position: relative;
+  z-index: 30;
 }
 #container .header .social-icons {
   font-size: 1rem;
@@ -237,7 +239,7 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: -10;
   box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.2);
 }
 #container .header.active .social-icons {

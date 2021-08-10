@@ -122,6 +122,9 @@ body {
     background-size: cover;
     background-position: top center;
 
+    position: relative;
+    z-index: 30;
+
     // social icons
     .social-icons {
       font-size: 1rem;
@@ -303,7 +306,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
+    z-index: -10;
     box-shadow: 0px 5px 10px 5px rgba(0,0,0,0.2);
 
     .social-icons {

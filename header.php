@@ -66,7 +66,7 @@
 
     <div id="container" class="remodal-bg">
 
-      <header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+      <header class="header active" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
         <button class="menu-btn hamburger hamburger--elastic" type="button">
           <span class="hamburger-box">
@@ -75,6 +75,42 @@
           <p><small>menu</small></p>
         </button>
 
+        <div id="inner-header" class="wrap cf position-relative">
+          
+          <ul class="social-icons o-flex-layout position-absolute">
+            <li><a href="https://www.facebook.com/Southern-Aboriginal-Sports-104624365043189" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href=""><i class="fab fa-instagram"></i></a></li>
+            <li><a href=""><i class="fas fa-paper-plane"></i></a></li>
+          </ul>
+
+          <section class="section-header-logo o-grid-layout o-grid-layout--auto-1">
+            <?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
+            <a class="header-logo" href="<?php echo home_url(); ?>" rel="nofollow">
+              <?php get_template_part('library/images/inline', 'sas-logo-main.svg'); ?>
+            </a>
+            <div class="o-flex-layout o-flex-layout--column header-layout">
+
+              <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+              <?php wp_nav_menu(array(
+               'container' => false,                           // remove nav container
+               'container_class' => 'menu cf',                 // class of container (should you choose to use it)
+               'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
+               'menu_class' => 'nav top-nav cf',               // adding custom nav class
+               'theme_location' => 'main-nav',                 // where it's located in the theme
+               'before' => '',                                 // before the menu
+                 'after' => '',                                  // after the menu
+                 'link_before' => '',                            // before each link
+                 'link_after' => '',                             // after each link
+                 'depth' => 0,                                   // limit the depth of the nav
+               'fallback_cb' => ''                             // fallback function (if there is one)
+              )); ?>
+              </nav>
+            </div>
+          </section>
+        </div>
+
+      </header>
+      <header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
         <div id="inner-header" class="wrap cf position-relative">
           
           <ul class="social-icons o-flex-layout position-absolute">
