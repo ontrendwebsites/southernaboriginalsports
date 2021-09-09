@@ -27,14 +27,14 @@ body {
   font-family: "Source Sans Pro", sans-serif;
 }
 body a {
-  color: #08283F;
-  transition: all 0.07s ease-in;
+  color: rgba(8, 40, 63, 0.7);
+  transition: all 0.04s ease-in;
 }
 body a:visited {
   color: #08283F;
 }
 body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
-  color: #3b89a7;
+  color: #08283F;
 }
 
 #container p {
@@ -85,6 +85,10 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
   border: none;
   height: 1px;
   background-color: #3b89a7;
+}
+#container img,
+#container .wp-block-image img {
+  height: auto;
 }
 #container .header {
   background-color: #f89827;

@@ -48,15 +48,15 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 
   a {
-    color: $blue-dark;
-    transition: all .07s ease-in;
+    color: rgba($blue-dark, 0.7);
+    transition: all .04s ease-in;
 
     &:visited {
       color: $blue-dark;  
     }
 
     &:hover, &:visited:hover, &:focus, &:visited:focus {
-      color: $blue-light;
+      color: $blue-dark;
     }
   }
 }
@@ -115,6 +115,12 @@ body {
     border: none;
     height: 1px;
     background-color: $blue-light;
+  }
+
+  // images
+  img,
+  .wp-block-image img {
+    height: auto;
   }
 
   // header
