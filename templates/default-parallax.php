@@ -6,12 +6,20 @@ get_header(); ?>
 			<div id="content">
 
             <section class="parallax">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/bg.jpg" id="bg">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/moon.png" id="moon">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/mountain.png" id="mountain">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/road.png" id="road">
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/bg-pattern.png" id="bg">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/basketball.png" id="moon">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/foreground.png" id="mountain">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/girl-with-ball.png" id="road">
                 <h2 id="text">Moon light</h2>
             </section>
+
+			<!-- <section class="parallax">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/bg-pattern.png" id="bg">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/basketball.png" id="moon">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/foreground.png" id="mountain">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/girl-with-ball.png" id="road">
+                <h2 id="text">Moon light</h2>
+            </section> -->
 
 				<div id="inner-content" class="wrap cf">
 

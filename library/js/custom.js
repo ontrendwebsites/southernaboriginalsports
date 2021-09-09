@@ -45,6 +45,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     bg.style.top = value * 0.5 + 'px';
     moon.style.left = -value * 0.5 + 'px';
+    moon.style.transform =  'rotate(' + -value * 0.05 + 'deg)' ;
     mountain.style.top = -value * 0.15 + 'px';
     road.style.top = value * 0.15 + 'px';
     text.style.top = value * 1 + 'px';
