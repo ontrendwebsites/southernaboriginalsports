@@ -6,6 +6,8 @@ $yellow: #fbb040;
 $blue-dark: #08283F;
 $blue-light: #3b89a7;
 
+$border-radius-large: 8px;
+
 // fonts
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
 @font-face {
@@ -80,7 +82,7 @@ body {
     font-size: 2.5em;
 
     @media (min-width:$tablet) {
-      font-size: 4.5em;
+      font-size: 3.5rem;
     }
   }
 
@@ -88,7 +90,7 @@ body {
     font-size: 2em;
 
     @media (min-width:$tablet) {
-      font-size: 3.5em;
+      font-size: 3rem;
     }
   }
 
@@ -96,7 +98,7 @@ body {
     font-size: 1.8em;
 
     @media (min-width:$tablet) {
-      font-size: 2.5em;
+      font-size: 2rem;
     }
   }
 
@@ -104,7 +106,7 @@ body {
     font-size: 1.5em;
 
     @media (min-width:$tablet) {
-      font-size: 1.8em;
+      font-size: 1.7rem;
     }
   }
 
@@ -173,12 +175,14 @@ body {
 
       .hamburger-inner {
 
+        background: $yellow;
+
         &:before {
-          background: #ffc72c;
+          background: $blue-dark;
         }
 
         &:after {
-          background: #d22631;
+          background: $blue-light;
         }
       }
     }
@@ -411,6 +415,11 @@ body {
   }
 }
 
+// main container
+.hentry {
+  border-radius: $border-radius-large;
+}
+
 // sidebar
 .widget {
   padding: 0 10px;
@@ -422,7 +431,8 @@ body {
   background-image: url(https://southernaboriginalsports.com.au/wp-content/uploads/2021/08/Website-Background-blue.jpg);
   background-size: cover;
   background-position: top center;
-  border-radius: 8px;
+  border-radius: $border-radius-large;
+  margin-top: 0;
 }
 
 
@@ -447,6 +457,8 @@ body {
     align-self: flex-start;
     border: none;
     background-color: rgba($blue-light, .8);
+    background-color: rgba($yellow, 1);
+    color: $blue-dark;
     padding: 6px 16px;
     border-radius: 4px;
     font-weight: 700;
