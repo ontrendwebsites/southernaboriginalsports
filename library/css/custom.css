@@ -14,6 +14,7 @@
 html {
   scroll-behavior: smooth;
   box-sizing: border-box;
+  hyphens: none;
 }
 
 *, *:before, *:after {
@@ -27,18 +28,22 @@ body {
   font-family: "Source Sans Pro", sans-serif;
 }
 body a {
-  color: #08283F;
-  transition: all 0.07s ease-in;
+  color: rgba(8, 40, 63, 0.7);
+  transition: all 0.04s ease-in;
 }
 body a:visited {
   color: #08283F;
 }
 body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
-  color: #3b89a7;
+  color: #08283F;
 }
 
 #container p {
   margin-top: 0;
+  hyphens: none;
+}
+#container p.has-large-font-size {
+  line-height: 110%;
 }
 #container h1, #container h2, #container h3, #container h4, #container h5, #container h6 {
   font-weight: 700;
@@ -53,7 +58,7 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
 }
 @media (min-width: 768px) {
   #container h1 {
-    font-size: 4.5em;
+    font-size: 3.5rem;
   }
 }
 #container h2 {
@@ -61,7 +66,7 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
 }
 @media (min-width: 768px) {
   #container h2 {
-    font-size: 3.5em;
+    font-size: 3rem;
   }
 }
 #container h3 {
@@ -69,7 +74,7 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
 }
 @media (min-width: 768px) {
   #container h3 {
-    font-size: 2.5em;
+    font-size: 2rem;
   }
 }
 #container h4 {
@@ -77,7 +82,7 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
 }
 @media (min-width: 768px) {
   #container h4 {
-    font-size: 1.8em;
+    font-size: 1.7rem;
   }
 }
 #container hr {
@@ -85,6 +90,17 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
   border: none;
   height: 1px;
   background-color: #3b89a7;
+}
+#container img,
+#container .wp-block-image img {
+  height: auto;
+}
+#container .wp-block-button__link {
+  background: #08283F;
+  color: #fff;
+}
+#container .wp-block-button__link:hover {
+  background: #3b89a7;
 }
 #container .header {
   background-color: #f89827;
@@ -135,11 +151,14 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
   margin: 0.3em 0 0 0;
   line-height: 0;
 }
+#container .header .hamburger .hamburger-inner {
+  background: #fbb040;
+}
 #container .header .hamburger .hamburger-inner:before {
-  background: #ffc72c;
+  background: #08283F;
 }
 #container .header .hamburger .hamburger-inner:after {
-  background: #d22631;
+  background: #3b89a7;
 }
 #container .header nav {
   font-size: 0.9rem;
@@ -319,17 +338,40 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
   max-height: 200px;
 }
 
+.hentry {
+  border-radius: 8px;
+}
+
 .widget {
   padding: 0 10px;
   margin: 2.2em 0;
 }
 
 .sidebar {
-  background-color: #fbb040;
+  background-color: rgba(59, 137, 167, 0.3);
   background-image: url(https://southernaboriginalsports.com.au/wp-content/uploads/2021/08/Website-Background-blue.jpg);
-  background-size: cover;
+  background-size: auto;
   background-position: top center;
+  background-repeat: no-repeat;
   border-radius: 8px;
+  margin-top: 0;
+}
+
+#media_image-2 {
+  text-align: center;
+  margin: 1rem 0;
+}
+#media_image-2 img {
+  height: 100px;
+  width: auto;
+}
+
+#search-2 {
+  margin-top: 1rem;
+}
+
+.fts-jal-fb-header {
+  display: none;
 }
 
 .searchform {
@@ -351,6 +393,8 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
   align-self: flex-start;
   border: none;
   background-color: rgba(59, 137, 167, 0.8);
+  background-color: #fbb040;
+  color: #08283F;
   padding: 6px 16px;
   border-radius: 4px;
   font-weight: 700;
@@ -389,6 +433,7 @@ section.parallax:after {
   width: 100%;
   height: 100%;
   background: #eaedf2;
+  background: #33738e;
   z-index: 10;
   mix-blend-mode: color;
 }
@@ -411,6 +456,10 @@ section.parallax img {
 
 #road {
   z-index: 2;
+}
+
+#moon {
+  transform-origin: center;
 }
 
 /*# sourceMappingURL=custom.css.map */
