@@ -360,8 +360,11 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
 #container .gap-medium {
   gap: 0.5rem;
 }
-#container .gap-large {
+#container .gap-1rem {
   gap: 1rem;
+}
+#container .gap-2rem {
+  gap: 2rem;
 }
 #container .position-absolute {
   position: absolute;
