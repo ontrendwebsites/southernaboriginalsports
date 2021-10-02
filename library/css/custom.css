@@ -21,11 +21,19 @@ html {
   box-sizing: inherit;
 }
 
+:target:before {
+  content: "";
+  display: block;
+  height: 100px;
+  margin: -100px 0 0;
+}
+
 body {
   font-size: 18px;
   line-height: 140%;
   color: #08283F;
   font-family: "Source Sans Pro", sans-serif;
+  background-color: #fff;
 }
 body a {
   color: rgba(8, 40, 63, 0.7);
@@ -101,6 +109,20 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
 }
 #container .wp-block-button__link:hover {
   background: #3b89a7;
+}
+#container .button {
+  border: none;
+  background-color: rgba(59, 137, 167, 0.8);
+  color: #08283F;
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-weight: 700;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+}
+#container .button:hover {
+  background-color: #08283F;
+  color: #fbb040;
 }
 #container .header {
   background-color: #f89827;
@@ -312,9 +334,15 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
 #container .o-grid-layout > * {
   margin: auto;
 }
+#container .o-grid-layout img {
+  width: 100%;
+}
 @media (min-width: 768px) {
   #container .o-grid-layout--auto-1 {
     grid-template-columns: auto 1fr;
+  }
+  #container .o-grid-layout--columns-two-default {
+    grid-template-columns: 1fr 1fr;
   }
 }
 #container .o-flex-layout {
@@ -326,11 +354,25 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
 #container .o-flex-layout.o-flex-layout--space-evenly {
   justify-content: space-evenly;
 }
+#container .gap-small {
+  gap: 0.25rem;
+}
+#container .gap-medium {
+  gap: 0.5rem;
+}
+#container .gap-large {
+  gap: 1rem;
+}
 #container .position-absolute {
   position: absolute;
 }
 #container .position-relative {
   position: relative;
+}
+@media (max-width: 768px) {
+  #container .two-column-intro .content {
+    margin-bottom: 3rem;
+  }
 }
 #container .sas-presents-logo {
   width: auto;
@@ -460,6 +502,10 @@ section.parallax img {
 
 #moon {
   transform-origin: center;
+}
+
+.hentry {
+  border: none;
 }
 
 /*# sourceMappingURL=custom.css.map */

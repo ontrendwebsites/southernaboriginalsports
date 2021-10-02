@@ -14,6 +14,18 @@ get_header(); ?>
 
               <article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
+                <?php
+                $hero = get_field('two_column_intro');
+                if( $hero ): ?>
+                    <div class="two-column-intro o-grid-layout o-grid-layout--columns-two-default">
+                        <div class="content">
+                            <h2><?php echo $hero['heading']; ?></h2>
+                            <?php echo $hero['intro_content']; ?>
+                        </div>
+                        <img src="<?php echo esc_url( $hero['image']['url'] ); ?>" alt="<?php echo esc_attr( $hero['image']['alt'] ); ?>" />
+                    </div>
+                <?php endif; ?>
+
                 <section class="entry-content cf" itemprop="articleBody">
                   <?php
                     the_content();

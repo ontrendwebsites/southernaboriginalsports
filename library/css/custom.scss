@@ -42,11 +42,19 @@ html {
   box-sizing: inherit;
 }
 
+:target:before {
+  content: "";
+  display: block;
+  height: 100px;
+  margin: -100px 0 0;
+}
+
 body {
   font-size: 18px;
   line-height: 140%;
   color: $blue-dark;
   font-family: 'Source Sans Pro', sans-serif;
+  background-color: $white;
 
   a {
     color: rgba($blue-dark, 0.7);
@@ -137,6 +145,22 @@ body {
     &:hover {
       background: $blue-light;
 
+    }
+  }
+
+  .button {
+    border: none;
+    background-color: rgba($blue-light, .8);
+    color: $blue-dark;
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-weight: 700;
+    transition: all .2s ease-out;
+    text-decoration: none;;
+
+    &:hover {
+      background-color: $blue-dark;
+      color: $yellow;
     }
   }
 
@@ -404,12 +428,20 @@ body {
     > * {
       margin: auto;
     }
+
+    img {
+      width: 100%;
+    }
   }
 
   @media (min-width: $tablet) {
     
     .o-grid-layout--auto-1 {
       grid-template-columns: auto 1fr;
+    }
+
+    .o-grid-layout--columns-two-default {
+      grid-template-columns: 1fr 1fr;
     }
   }
 
@@ -425,9 +457,32 @@ body {
     }
   }
 
+  .gap-small {
+    gap: .25rem;
+  }
+
+  .gap-medium {
+    gap: .5rem;
+  }
+
+  .gap-large {
+    gap: 1rem;
+  }
+
   .position-absolute { position: absolute;}
   .position-relative { position: relative;}
 
+  // full width page
+  .two-column-intro {
+
+    @media (max-width: $tablet) {
+
+      .content {
+        margin-bottom: 3rem;
+      }
+    }
+    
+  }
 
 
   // events page
@@ -575,7 +630,10 @@ section.parallax {
   transform-origin: center;
 }
 
-
+// Redesign Sep 2021
+.hentry {
+  border: none;
+}
 
 
 
