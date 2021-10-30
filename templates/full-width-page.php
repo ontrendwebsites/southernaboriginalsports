@@ -24,39 +24,28 @@ if( have_rows('two_column_text_image') ):
         // Load sub field value.
         $image = get_sub_field('image');
         $content = get_sub_field('content');
+        $extra = get_sub_field('extra_full_width_content', false, false);
         // Do something...
 
-        
 
-        // check if left or right
-        if( get_sub_field('left_right') ) {
-          echo '<div class="two-column-intro o-grid-layout o-grid-layout--columns-two-default gap-2rem">';
-          echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" />';
+        echo '<div class="two-column-intro o-grid-layout o-grid-layout--columns-two-default gap-2rem">';
           echo '<div class="content">' . $content . '</div>';
+          // check if left or right
+          if( get_sub_field('left_right') ) {
+            echo '<img style="grid-column: 1; grid-row: 1" src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" />';
+          } else {
+            echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" />';
+          }
           echo '</div>';
-        } else {
-          echo '<div class="two-column-intro o-grid-layout o-grid-layout--columns-two-default gap-2rem">';
-          echo '<div class="content">' . $content . '</div>';
-          echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" />';
-          echo '</div>';
-        }
+
+          if( $extra ) {
+            echo '<hr class="blank-space" /><div class="intro-full-width">' . $extra . '</div>';
+          }
 
     // End loop.
     endwhile;
 endif;
 ?>
-
-                <?php
-                $hero = get_field('two_column_intro');
-                if( $hero ): ?>
-                    <div class="two-column-intro o-grid-layout o-grid-layout--columns-two-default gap-2rem">
-                        <div class="content">
-                            <h2 style="padding-bottom: 1rem;"><?php echo $hero['heading']; ?></h2>
-                            <?php echo $hero['intro_content']; ?>
-                        </div>
-                        <img src="<?php echo esc_url( $hero['image']['url'] ); ?>" alt="<?php echo esc_attr( $hero['image']['alt'] ); ?>" />
-                    </div>
-                <?php endif; ?>
 
                 <section class="entry-content cf" itemprop="articleBody">
                   <?php

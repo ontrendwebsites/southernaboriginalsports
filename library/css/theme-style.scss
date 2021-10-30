@@ -1,0 +1,67 @@
+@import "variables";
+
+.highlighter {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='100%25' height='16'%3E%3Crect width='100%25' height='100' style='fill:%2337c3db;stroke-width:3;'/%3E%3C/svg%3E");
+  background-size: 100% 12px;
+  position: relative;
+  padding: 0 5px;
+  margin: 0 -5px;
+  background-position: center bottom 7px;
+  background-repeat: repeat-x;
+}
+
+.intro-full-width {
+  padding: 1rem;
+  background-color: rgba($blue-light, 0.2);
+  margin-bottom: 5rem;
+  //border-top: 1px solid $blue-light;
+  //border-bottom: 1px solid $blue-light;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    &.mandela-quote {
+      float:right;
+      width: 140px;
+      height: 140px;
+      shape-outside: circle(50%);
+      border-radius: 50%;
+      background-color: $yellow;
+    }
+  }
+}
+
+blockquote {
+  font-size: 1.5rem;
+  margin: 0;
+
+  p:first-of-type {
+    &:before {
+      content: open-quote;
+    }
+  }
+
+  
+}
+
+
+@media (min-width:$wide) {
+
+  .intro-full-width {
+    padding: 2rem;
+
+    img.mandela-quote {
+      border-radius: 0;
+      background-color: transparent;
+      float:right;
+      width: 400px;
+      shape-outside: polygon(27.18% 49.36%, 24.71% 20.39%, 30.52% -2.6%, 100.83% -2.73%, 102.41% 99.83%, 0% 100%, -0.49% 66.87%, 7.72% 56.49%);
+    }
+  }
+  
+  blockquote {
+    font-size: 2.5rem;
+  }
+}

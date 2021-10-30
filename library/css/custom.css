@@ -1,4 +1,70 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap");
+@font-face {
+  font-family: "orangejuice";
+  src: url("../fonts/orange-juice.woff");
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.highlighter {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='100%25' height='16'%3E%3Crect width='100%25' height='100' style='fill:%2337c3db;stroke-width:3;'/%3E%3C/svg%3E");
+  background-size: 100% 12px;
+  position: relative;
+  padding: 0 5px;
+  margin: 0 -5px;
+  background-position: center bottom 7px;
+  background-repeat: repeat-x;
+}
+
+.intro-full-width {
+  padding: 1rem;
+  background-color: rgba(59, 137, 167, 0.2);
+  margin-bottom: 5rem;
+}
+.intro-full-width img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.intro-full-width img.mandela-quote {
+  float: right;
+  width: 140px;
+  height: 140px;
+  shape-outside: circle(50%);
+  border-radius: 50%;
+  background-color: #fbb040;
+}
+
+blockquote {
+  font-size: 1.5rem;
+  margin: 0;
+}
+blockquote p:first-of-type:before {
+  content: open-quote;
+}
+
+@media (min-width: 1030px) {
+  .intro-full-width {
+    padding: 2rem;
+  }
+  .intro-full-width img.mandela-quote {
+    border-radius: 0;
+    background-color: transparent;
+    float: right;
+    width: 400px;
+    shape-outside: polygon(27.18% 49.36%, 24.71% 20.39%, 30.52% -2.6%, 100.83% -2.73%, 102.41% 99.83%, 0% 100%, -0.49% 66.87%, 7.72% 56.49%);
+  }
+
+  blockquote {
+    font-size: 2.5rem;
+  }
+}
 @font-face {
   font-family: "orangejuice";
   src: url("../fonts/orange-juice.woff");
@@ -30,7 +96,7 @@ html {
 
 body {
   font-size: 18px;
-  line-height: 140%;
+  line-height: 1.4;
   color: #08283F;
   font-family: "Source Sans Pro", sans-serif;
   background-color: #fff;
@@ -66,7 +132,7 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
 }
 @media (min-width: 768px) {
   #container h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
   }
 }
 #container h2 {
@@ -74,7 +140,7 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
 }
 @media (min-width: 768px) {
   #container h2 {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 }
 #container h3 {
@@ -98,6 +164,9 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
   border: none;
   height: 1px;
   background-color: #3b89a7;
+}
+#container hr.blank-space {
+  background-color: transparent;
 }
 #container img,
 #container .wp-block-image img {
@@ -123,6 +192,11 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
 #container .button:hover {
   background-color: #08283F;
   color: #fbb040;
+}
+#container .wrap {
+  width: 1440px;
+  max-width: 100vw;
+  padding: 0 2vw;
 }
 #container .header {
   background-color: #f89827;
