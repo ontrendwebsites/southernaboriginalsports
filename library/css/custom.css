@@ -44,6 +44,8 @@
 blockquote {
   font-size: 1.5rem;
   margin: 0;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 blockquote p:first-of-type:before {
   content: open-quote;
@@ -119,6 +121,9 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
 #container p.has-large-font-size {
   line-height: 110%;
 }
+#container p.font-light {
+  font-weight: 100;
+}
 #container h1, #container h2, #container h3, #container h4, #container h5, #container h6 {
   font-weight: 700;
   line-height: 110%;
@@ -186,12 +191,20 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
   padding: 6px 16px;
   border-radius: 4px;
   font-weight: 700;
-  transition: all 0.2s ease-out;
+  transition: all 0.1s ease-out;
   text-decoration: none;
 }
 #container .button:hover {
   background-color: #08283F;
   color: #fbb040;
+}
+#container .button.ghost {
+  border: 2px solid #08283F;
+  background: transparent;
+}
+#container .button.ghost:hover {
+  background-color: #08283F;
+  color: #fff;
 }
 #container .wrap {
   width: 1440px;

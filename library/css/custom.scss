@@ -50,6 +50,10 @@ body {
     &.has-large-font-size {
       line-height: 110%;
     }
+
+    &.font-light {
+      font-weight: 100;
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -129,12 +133,22 @@ body {
     padding: 6px 16px;
     border-radius: 4px;
     font-weight: 700;
-    transition: all .2s ease-out;
-    text-decoration: none;;
+    transition: all .1s ease-out;
+    text-decoration: none;
 
     &:hover {
       background-color: $blue-dark;
       color: $yellow;
+    }
+
+    &.ghost {
+      border: 2px solid $blue-dark;
+      background: transparent;
+
+      &:hover {
+        background-color: $blue-dark;
+        color: $white;
+      }
     }
   }
 
