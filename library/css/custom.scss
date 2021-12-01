@@ -1,35 +1,5 @@
-// colours
-$white: #fff;
-$black: #000;
-$orange: #e47b25;
-$yellow: #fbb040;
-$blue-dark: #08283F;
-$blue-light: #3b89a7;
-
-$border-radius-large: 8px;
-
-// fonts
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
-@font-face {
-  font-family: 'orangejuice';
-  src: url('../fonts/orange-juice.woff');
-}
-
-$font-main: 'Source Sans Pro', sans-serif;
-
-// device sizes
-$tablet: 768px;
-$wide: 1030px;
-
-// animations
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+@import 'theme-style';
+@import "variables";
 
 
 html {
@@ -42,11 +12,19 @@ html {
   box-sizing: inherit;
 }
 
+:target:before {
+  content: "";
+  display: block;
+  height: 100px;
+  margin: -100px 0 0;
+}
+
 body {
   font-size: 18px;
-  line-height: 140%;
+  line-height: 1.4;
   color: $blue-dark;
   font-family: 'Source Sans Pro', sans-serif;
+  background-color: $white;
 
   a {
     color: rgba($blue-dark, 0.7);
@@ -72,6 +50,10 @@ body {
     &.has-large-font-size {
       line-height: 110%;
     }
+
+    &.font-light {
+      font-weight: 100;
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -88,7 +70,7 @@ body {
     font-size: 2.5em;
 
     @media (min-width:$tablet) {
-      font-size: 3.5rem;
+      font-size: 4rem;
     }
   }
 
@@ -96,7 +78,7 @@ body {
     font-size: 2em;
 
     @media (min-width:$tablet) {
-      font-size: 3rem;
+      font-size: 3.5rem;
     }
   }
 
@@ -121,6 +103,10 @@ body {
     border: none;
     height: 1px;
     background-color: $blue-light;
+
+    &.blank-space {
+      background-color: transparent;
+    }
   }
 
   // images
@@ -138,6 +124,39 @@ body {
       background: $blue-light;
 
     }
+  }
+
+  .button {
+    border: none;
+    background-color: rgba($blue-light, .8);
+    color: $blue-dark;
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-weight: 700;
+    transition: all .1s ease-out;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $blue-dark;
+      color: $yellow;
+    }
+
+    &.ghost {
+      border: 2px solid $blue-dark;
+      background: transparent;
+
+      &:hover {
+        background-color: $blue-dark;
+        color: $white;
+      }
+    }
+  }
+
+  // wrapper
+  .wrap {
+    width: 1440px;
+    max-width: 100vw;
+    padding: 0 2vw;
   }
 
   // header
@@ -404,12 +423,20 @@ body {
     > * {
       margin: auto;
     }
+
+    img {
+      width: 100%;
+    }
   }
 
   @media (min-width: $tablet) {
     
     .o-grid-layout--auto-1 {
       grid-template-columns: auto 1fr;
+    }
+
+    .o-grid-layout--columns-two-default {
+      grid-template-columns: 1fr 1fr;
     }
   }
 
@@ -425,9 +452,36 @@ body {
     }
   }
 
+  .gap-small {
+    gap: .25rem;
+  }
+
+  .gap-medium {
+    gap: .5rem;
+  }
+
+  .gap-1rem {
+    gap: 1rem;
+  }
+
+  .gap-2rem {
+    gap: 2rem;
+  }
+
   .position-absolute { position: absolute;}
   .position-relative { position: relative;}
 
+  // full width page
+  .two-column-intro {
+
+    @media (max-width: $tablet) {
+
+      .content {
+        margin-bottom: 3rem;
+      }
+    }
+    
+  }
 
 
   // events page
@@ -575,7 +629,10 @@ section.parallax {
   transform-origin: center;
 }
 
-
+// Redesign Sep 2021
+.hentry {
+  border: none;
+}
 
 
 

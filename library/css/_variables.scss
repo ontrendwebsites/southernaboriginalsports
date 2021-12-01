@@ -1,0 +1,32 @@
+// colours
+$white: #fff;
+$black: #000;
+$orange: #e47b25;
+$yellow: #fbb040;
+$blue-dark: #08283F;
+$blue-light: #3b89a7;
+
+$border-radius-large: 8px;
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
+@font-face {
+  font-family: 'orangejuice';
+  src: url('../fonts/orange-juice.woff');
+}
+
+$font-main: 'Source Sans Pro', sans-serif;
+
+// device sizes
+$tablet: 768px;
+$wide: 1030px;
+
+// animations
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
