@@ -6,6 +6,18 @@ get_header(); ?>
 
       <div id="content">
 
+      <?php
+      // This displays i a full width banner if News Banner content has anything in it.
+      $news_banner = get_field('news_banner');
+      if($news_banner) {
+        echo '<div class="news-banner">';
+          echo '<div class="news-banner-inner">';
+	          echo $news_banner;
+          echo '</div>';
+        echo '</div>';
+      }
+      ?>
+
         <div id="inner-content" class="wrap cf">
 
             <main id="main" class="m-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
@@ -13,6 +25,7 @@ get_header(); ?>
               <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
               <article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+
 
 <?php
 // Check rows exists.

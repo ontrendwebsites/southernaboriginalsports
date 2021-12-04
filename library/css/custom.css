@@ -51,6 +51,30 @@ blockquote p:first-of-type:before {
   content: open-quote;
 }
 
+.news-banner {
+  border: 4px solid #e47b25;
+  border-left: none;
+  border-right: none;
+  background-color: rgba(228, 123, 37, 0.15);
+  padding: 1em 0.5em !important;
+}
+
+.news-banner-inner {
+  margin: auto;
+  gap: 0.5em;
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+  justify-content: space-around;
+}
+.news-banner-inner p {
+  margin-bottom: 0.25rem;
+}
+.news-banner-inner img {
+  width: 100%;
+  margin: auto;
+}
+
 @media (min-width: 1030px) {
   .intro-full-width {
     padding: 2rem;
@@ -114,6 +138,12 @@ body a:hover, body a:visited:hover, body a:focus, body a:visited:focus {
   color: #08283F;
 }
 
+#container #content {
+  margin-top: 0;
+}
+#container #inner-content {
+  margin-top: 1.5em;
+}
 #container p {
   margin-top: 0;
   hyphens: none;
