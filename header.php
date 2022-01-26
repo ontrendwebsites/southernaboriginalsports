@@ -18,6 +18,17 @@
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-187339051-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-187339051-1');
+</script>
+
+
 
 
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
@@ -77,12 +88,14 @@
         </button>
 
         <div id="inner-header" class="wrap cf position-relative">
-          
-          <ul class="social-icons o-flex-layout position-absolute">
-            <li><a href="https://www.facebook.com/Southern-Aboriginal-Sports-104624365043189" target="_blank"><i class="fab fa-facebook"></i></a></li>
-            <li><a href=""><i class="fab fa-instagram"></i></a></li>
-            <li><a href=""><i class="fas fa-paper-plane"></i></a></li>
-          </ul>
+          <div>
+            <p>Connect with us</p>
+            <ul class="social-icons o-flex-layout position-absolute">
+              <li><a href="https://www.facebook.com/Southern-Aboriginal-Sports-104624365043189" target="_blank"><i class="fab fa-facebook"></i></a></li>
+              <li><a href=""><i class="fab fa-instagram"></i></a></li>
+              <li><a href=""><i class="fas fa-paper-plane"></i></a></li>
+            </ul>
+          </div>
 
           <section class="section-header-logo o-grid-layout o-grid-layout--auto-1">
             <?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
@@ -116,7 +129,8 @@
           
           <ul class="social-icons o-flex-layout position-absolute">
             <li><a href="https://www.facebook.com/Southern-Aboriginal-Sports-104624365043189" target="_blank"><i class="fab fa-facebook"></i></a></li>
-            <li><a href=""><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.instagram.com/southernaboriginalsports/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.instagram.com/southernaboriginalsports/" target="_blank"><i class="fab fa-twitter"></i></a></li>
             <li><a href=""><i class="fas fa-paper-plane"></i></a></li>
           </ul>
 
