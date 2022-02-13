@@ -649,7 +649,6 @@ section.parallax {
   max-width: 1300px;
   height: 1730px;
   max-height: 1730px;
-  outline: 2px solid green;
   grid-template-columns: 31.7% 31.7% auto;
   grid-template-rows: 190px 150px 150px 150px 150px 150px 150px 190px;
   
@@ -709,6 +708,41 @@ section.parallax {
     }
   }
 }
+
+// programs grid responsive
+@media (max-width: 900px) {
+  .programs-grid {
+    width: 515px;
+    height: auto;
+    grid-template-columns: 31.7% 31.7% auto;
+    grid-template-rows: auto 95px 95px 95px 95px 85px 80px 80px;
+    
+    .program {
+      width: 187px;
+  
+      img {
+        width: 100%;
+        margin: auto;
+        object-fit: contain;
+        transform: scale(0.6);
+      }
+    }
+  }
+}
+
+@media (max-width: 570px) {
+  #container .o-grid-layout.programs-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    .program {
+      width: 260px;
+      height: 240px;
+    }
+  }
+}
+
 
 
 

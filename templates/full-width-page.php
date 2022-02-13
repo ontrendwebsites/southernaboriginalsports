@@ -38,6 +38,7 @@ if( have_rows('two_column_text_image') ):
         $image = get_sub_field('image');
         $content = get_sub_field('content');
         $extra = get_sub_field('extra_full_width_content', false, false);
+        $extra_bg_color = get_sub_field('extra_bg_color');
         // Do something...
 
 
@@ -52,7 +53,7 @@ if( have_rows('two_column_text_image') ):
           echo '</div>';
 
           if( $extra ) {
-            echo '<hr class="blank-space" /><div class="intro-full-width">' . $extra . '</div>';
+            echo '<hr class="blank-space" /><div class="intro-full-width" style="background-color: ' . $extra_bg_color . '">' . $extra . '</div>';
           }
 
     // End loop.

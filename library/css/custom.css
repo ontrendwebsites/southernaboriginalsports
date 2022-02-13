@@ -634,7 +634,6 @@ section.parallax img {
   max-width: 1300px;
   height: 1730px;
   max-height: 1730px;
-  outline: 2px solid green;
   grid-template-columns: 31.7% 31.7% auto;
   grid-template-rows: 190px 150px 150px 150px 150px 150px 150px 190px;
 }
@@ -684,6 +683,34 @@ section.parallax img {
   grid-area: 5/3/7/4;
 }
 
+@media (max-width: 900px) {
+  .programs-grid {
+    width: 515px;
+    height: auto;
+    grid-template-columns: 31.7% 31.7% auto;
+    grid-template-rows: auto 95px 95px 95px 95px 85px 80px 80px;
+  }
+  .programs-grid .program {
+    width: 187px;
+  }
+  .programs-grid .program img {
+    width: 100%;
+    margin: auto;
+    object-fit: contain;
+    transform: scale(0.6);
+  }
+}
+@media (max-width: 570px) {
+  #container .o-grid-layout.programs-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  #container .o-grid-layout.programs-grid .program {
+    width: 260px;
+    height: 240px;
+  }
+}
 /* custom.css | http://localhost:8888/southernaboriginalsports/wp-content/themes/southernaboriginalsports/library/css/custom.css?v=7 */
 
 /*# sourceMappingURL=custom.css.map */
