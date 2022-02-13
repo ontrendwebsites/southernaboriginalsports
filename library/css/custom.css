@@ -628,4 +628,62 @@ section.parallax img {
   border: none;
 }
 
+.programs-grid {
+  margin: auto;
+  width: 820px;
+  max-width: 1300px;
+  height: 1730px;
+  max-height: 1730px;
+  outline: 2px solid green;
+  grid-template-columns: 31.7% 31.7% auto;
+  grid-template-rows: 190px 150px 150px 150px 150px 150px 150px 190px;
+}
+.programs-grid .program {
+  background-image: url("../images/hexagon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  width: 300px;
+  margin: 0;
+  justify-self: start;
+}
+.programs-grid .program:hover {
+  transform: scale(1.05);
+  transition: all 0.2s ease-in;
+}
+.programs-grid .program img {
+  width: 100%;
+  margin: auto;
+  object-fit: contain;
+  transform: scale(0.6);
+}
+.programs-grid .program.program-1 {
+  grid-area: 2/2/4/3;
+}
+.programs-grid .program.program-2 {
+  grid-area: 3/1/5/2;
+}
+.programs-grid .program.program-3 {
+  grid-area: 3/3/4/4;
+}
+.programs-grid .program.program-4 {
+  grid-area: 4/2/5/3;
+}
+.programs-grid .program.program-5 {
+  grid-area: 5/1/7/2;
+}
+.programs-grid .program.program-6 {
+  grid-area: 6/2/8/3;
+}
+.programs-grid .program.program-7 {
+  grid-area: 5/3/7/4;
+}
+
+/* custom.css | http://localhost:8888/southernaboriginalsports/wp-content/themes/southernaboriginalsports/library/css/custom.css?v=7 */
+
 /*# sourceMappingURL=custom.css.map */
